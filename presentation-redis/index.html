@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Presentation</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/league.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-transition="convex">
+          <p><img src="./dist/images/redis.png" alt="redis" /></p>
+          <p style="font-size: 1rem">Made by ColdReader94 for RSSchool</p>
+        </section>
+        <section data-transition="convex">
+          <h2>What is Redis?</h2>
+          <div class="fragment fade-up" style="font-size: 1.6rem">
+          <img src="./dist/images/1.png" width="50%" height="50%" alt="redis">       
+            <p>Redis is an open source (BSD licensed), in-memory data structure
+            store, used as a database, cache, and message broker.</p>
+          </div>
+        </section>
+        <section data-transition="convex">
+          <h2>Where Redis used?</h2>
+          <p class="fragment fade-up">
+            Due to the nature of the database design, typical use cases are
+            session caching, full page cache, message queue applications,
+            leaderboards and counting among others.
+          </p>
+        </section>        
+        <section data-transition="convex">
+          <img src="./dist/images/aws.png" alt="redis" />
+        </section>
+        <section data-transition="convex">
+          <h3>Is Redis popular?</h3>          
+          <div class="fragment fade-up">
+            <img src="./dist/images/Twitter.png" width="100" height="80" alt="">
+            <img src="./dist/images/amazon.png" width="200" height="100" alt="">
+            <img src="./dist/images/micr.jpg" width="200" height="100" alt="">
+            <img src="./dist/images/Alibaba.png" width="200" height="100" alt="">
+            <p>
+            Large companies such as Twitter are using Redis, Amazon Web Services
+            offers a managed Redis service called Elasticache for Redis,
+            Microsoft offers Azure Cache for Redis in Azure, and Alibaba is
+            offering ApsaraDB for Redis in Alibaba Cloud.
+          </p>
+          </div>
+        </section>
+        <section data-transition="convex">
+          <section>
+            <h2>Why Redis?</h2>
+            <p class="fragment fade-up">It`s open source and free.</p>
+            <p class="fragment fade-up">
+              It`s very fast.
+            </p>
+            <p class="fragment fade-up">
+              Provides data structures such as strings, hashes, lists, sets,
+              sorted sets with range queries, bitmaps, hyperloglogs, geospatial
+              indexes, and streams.
+            </p>
+          </section>
+          <section data-transition="convex">
+            <h3>Other features such as:</h3>
+            <ul>
+              <li class="fragment fade-up">
+                <a href="https://redis.io/topics/transactions">Transactions</a>
+              </li>
+              <li class="fragment fade-up">
+                <a href="https://redis.io/topics/pubsub">Pub/Sub</a>
+              </li>
+              <li class="fragment fade-up">
+                <a href="https://redis.io/commands/expire"
+                  >Keys with a limited time-to-live</a
+                >
+              </li>
+              <li class="fragment fade-up">
+                <a href="https://redis.io/topics/sentinel"
+                  >Automatic failover</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-transition="convex">
+          <h3>Which OS supports Redis?</h3>
+          <p class="fragment fade-up">
+            Redis is written in ANSI C and works in most POSIX systems like
+            Linux, *BSD, and OS X, without external dependencies. There is no
+            official support for Windows builds, but we can use Redis in Open
+            Server.
+          </p>
+        </section>
+        <section data-transition="convex">
+          <section>
+            <h3>How to install Redis?</h3>
+            Download it from <a href="https://redis.io/">redis.io</a> or use
+            this special URL that always points to the latest stable Redis
+            version, that is,
+            <a href="http://download.redis.io/redis-stable.tar.gz"
+              >http://download.redis.io/redis-stable.tar.gz</a
+            >
+          </section>
+          <section data-transition="convex">
+            <h3>To compile Redis follow these steps:</h3>
+            <code style="background: rgba(175, 57, 57, 0.333)">
+              wget http://download.redis.io/redis-stable.tar.gz<br />
+              tar xvzf redis-stable.tar.gz <br />
+              cd redis-stable <br />
+              make
+            </code>
+          </section>
+          <section data-transition="convex">
+            <p>
+              It is a good idea to copy both the Redis server and the command
+              line interface into the proper places, either manually using the
+              following commands:
+            </p>
+            <code style="background: rgba(175, 57, 57, 0.333)">
+              sudo cp src/redis-server /usr/local/bin/ <br />
+              sudo cp src/redis-cli/usr/local/bin/
+            </code>
+            <p class="fragment fade-up">
+              Or just using
+              <code style="background: rgba(175, 57, 57, 0.333)">sudo make install</code>.
+            </p>
+          </section>
+          <section data-transition="convex">
+            <h3>Now you can run Redis</h3>
+            <p>
+              The simplest way to start the Redis server is just executing the
+              redis-server binary without any argument.
+            </p>
+            <code style="background: #5555; font-size: 1rem;">
+              $ redis-server<br />
+              [28550] 01 Aug 19:29:28 # Warning: no config file specified, using
+              the default config. In order to specify a config file use
+              'redis-server /path/to/redis.conf'<br />
+              [28550] 01 Aug 19:29:28 * Server started, Redis version 2.2.12<br />
+              [28550] 01 Aug 19:29:28 * The server is now ready to accept
+              connections on port 6379<br />
+              ... more logs ...
+            </code>
+          </section>
+		  <section data-transition="convex">
+			<p>Redis provides a command line utility that can be used to send commands to Redis. This program is called redis-cli.
+			The first thing to do in order to check if Redis is working properly is sending a PING command using redis-cli:</p>
+			<code style="background: rgba(175, 57, 57, 0.333)">
+			$ redis-cli ping<br>
+			</code>
+			<code style="background: rgba(175, 57, 57, 0.333)" class="fragment fade-up">PONG</code>
+			<p class="fragment fade-up">It works!</p>
+		  </section>
+        </section>
+		<section data-transition="convex">
+     <section> <h3>List of frequently used commands:</h3>
+      <div style="font-size: 1.2rem;">
+      <p>GET - Get key value</p>
+      <p>SET - Set the string value of a key</p>
+      <p>EXISTS - Determine if key exists</p>
+      <p>FLUSHALL - Delete all the keys of all the existing databases, not just the currently selected one</p>
+      <p>GETSET - Set the string value of a key and return its old value</p>
+      <p>DEL - Delete a key</p>
+      <p>KEYS - Find all keys matching the giving pattern</p>
+      <p>INCR / DECR - If value of key is integer - icrement / decriment it by one</p>
+      <p>TTL - Get the time to live for a key</p>
+      <p>PERSIST - Remove the expiration from a key</p>
+      <p>RENAME - Rename a key</p>
+    </div>
+		</section>
+    <section>
+      <h3>Full list of Redis commands: <a href="https://redis.io/commands">redis.io/commands</a></h3>
+    </section>
+
+		</section>
+		<section data-transition="convex">
+			<h3>You can try to work with Redis on this page:<br>
+				<a href="https://try.redis.io/">try.redis.io</a></h3>
+		</section>
+		<section data-transition="convex">
+			<h2>Links</h2>
+			<ul>
+				<li><a href="https://redis.io/">redis.io</a></li>
+				<li><a href="https://redis.io/documentation">redis.io/documentation</a></li>
+				<li><a href="https://aws.amazon.com/ru/redis/">aws.amazon.com/ru/redis/</a></li>
+			</ul>
+		</section>
+		<section data-transition="convex">
+			<h3>Thanks for your attention!</h3>
+		</section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controlsTutorial: true,
+        hash: true,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
